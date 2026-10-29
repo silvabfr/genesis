@@ -4,13 +4,20 @@
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Matrícula 2027 — Projeto Gênesis</title>
 <link rel="icon" href="logo.jpg"><link rel="stylesheet" href="style.css">
+<style>
+/* Botão "Voltar ao início": fixo no canto superior esquerdo (independe do style.css) */
+.btn-voltar{position:fixed;top:calc(68px + .75rem);left:max(.75rem,env(safe-area-inset-left));z-index:40;margin:0;display:inline-flex;align-items:center;gap:.5rem;min-height:44px;padding:.55rem 1.2rem .55rem 1rem;background:#0f4a75;border:2px solid #f4f0d8;border-radius:999px;color:#f4f0d8;text-decoration:none;font-weight:700;font-size:.95rem;box-shadow:0 4px 14px rgba(10,53,86,.35);transition:transform .2s,background .2s,color .2s}
+.btn-voltar svg{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.btn-voltar:hover{background:#f4f0d8;color:#0a3556;transform:translateY(-2px)}
+@media (max-width:480px){.btn-voltar{width:46px;height:46px;min-height:46px;padding:0;gap:0;justify-content:center;font-size:0}.btn-voltar svg{width:22px;height:22px}}
+</style>
 </head>
 <body>
 <header class="header"><div class="container"><a class="marca" href="index.html"><img src="logo.jpg" alt="Logo do Projeto Gênesis">Projeto Gênesis</a>
 <button class="hamburguer" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
 <ul class="menu"><li><a href="index.html#sobre">Sobre o Projeto</a></li><li><a href="index.html#turmas">Turmas</a></li><li><a href="index.html#como-funciona">Como funciona</a></li><li><a href="#contato">Contato</a></li><li><a class="btn btn-verde" href="matricula.html">Fazer matrícula 2027</a></li></ul></div></header>
 <section class="topo-mat" style="padding-bottom:4rem"><div class="container">
-<a class="btn-voltar" href="index.html" aria-label="Voltar para a página inicial"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>Voltar ao início</a>
+<a class="btn-voltar" href="index.html" aria-label="Voltar para a página inicial"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>   
 <h1>Matrícula 2027 — Projeto Gênesis</h1>
 <p>Preencha todos os dados abaixo. Ao final, você será levado ao WhatsApp com a mensagem pronta para enviar à nossa equipe.</p>
 </div></section>
