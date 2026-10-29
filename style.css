@@ -1,0 +1,212 @@
+/* ===== Projeto Gênesis — estilos globais ===== */
+/* Cores extraídas da logo: azul profundo, creme e verde das folhas */
+:root{
+  --azul:#0f4a75; --azul-esc:#0a3556; --creme:#f4f0d8; --verde:#5d9b2e; --verde-esc:#477a20;
+  --fundo:#f6f8fa; --texto:#1c2a36; --suave:#5b6b78; --borda:#d9e1e8;
+  --raio:14px; --sombra:0 6px 20px rgba(10,53,86,.12);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:'Segoe UI',system-ui,-apple-system,Roboto,sans-serif;color:var(--texto);background:var(--fundo);line-height:1.65;font-size:1.05rem}
+h1,h2,h3{font-family:Georgia,'Times New Roman',serif;line-height:1.2;color:var(--azul)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--verde);outline-offset:2px}
+.container{width:min(1100px,92%);margin-inline:auto}
+section{padding:4.5rem 0}
+.sec-titulo{font-size:clamp(1.7rem,4vw,2.3rem);margin-bottom:1rem}
+.sec-sub{color:var(--suave);max-width:60ch;margin-bottom:2rem}
+
+/* Botões */
+.btn{display:inline-block;padding:.8rem 1.5rem;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid transparent;cursor:pointer;font-size:1rem;font-family:inherit;transition:transform .2s,background .2s,box-shadow .2s,color .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:var(--sombra)}
+.btn-verde{background:var(--verde);color:#fff}
+.btn-verde:hover{background:var(--verde-esc)}
+.btn-azul{background:var(--azul);color:#fff}
+.btn-azul:hover{background:var(--azul-esc)}
+.btn-borda{border-color:var(--azul);color:var(--azul);background:#fff}
+.btn-borda:hover{background:var(--azul);color:#fff}
+.btn-grande{padding:1.1rem 2.4rem;font-size:1.15rem}
+
+/* Header fixo */
+.header{position:fixed;inset:0 0 auto 0;z-index:50;background:var(--azul);box-shadow:0 2px 12px rgba(0,0,0,.2)}
+.header .container{display:flex;align-items:center;justify-content:space-between;height:68px}
+.marca{display:flex;align-items:center;gap:.7rem;text-decoration:none;color:var(--creme);font-family:Georgia,serif;font-size:1.3rem;font-weight:700}
+.marca img{width:42px;height:42px;border-radius:8px}
+.menu{display:flex;align-items:center;gap:1.4rem;list-style:none}
+.menu a{color:var(--creme);text-decoration:none;font-weight:600;font-size:.95rem;padding:.3rem 0;border-bottom:2px solid transparent;transition:border-color .2s}
+.menu a:hover{border-color:var(--verde)}
+.menu .btn{color:#fff;padding:.55rem 1.1rem;border-bottom:2px solid transparent}
+.hamburguer{display:none;background:none;border:0;cursor:pointer;padding:.5rem}
+.hamburguer span{display:block;width:26px;height:3px;background:var(--creme);margin:5px 0;border-radius:2px;transition:transform .3s,opacity .3s}
+.hamburguer.aberto span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+.hamburguer.aberto span:nth-child(2){opacity:0}
+.hamburguer.aberto span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+
+/* Hero */
+.hero{background:linear-gradient(160deg,var(--azul-esc),var(--azul) 70%);color:var(--creme);padding:9rem 0 5.5rem;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-120px;bottom:-140px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(93,155,46,.45),transparent 70%)}
+.hero h1{color:var(--creme);font-size:clamp(2.1rem,6vw,3.6rem);max-width:18ch;margin-bottom:1.2rem}
+.hero p{max-width:55ch;font-size:1.2rem;margin-bottom:2rem;opacity:.95}
+.hero .lema{display:inline-block;margin-bottom:1.5rem;padding:.3rem 1rem;border-left:4px solid var(--verde);font-style:italic}
+.hero .container{position:relative;z-index:1}
+
+/* Sobre / missão */
+.duas-col{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start}
+.destaque{background:var(--azul);color:var(--creme);padding:2rem;border-radius:var(--raio)}
+.destaque h3{color:var(--creme);margin-bottom:.8rem}
+.numeros{display:flex;gap:2rem;margin-top:1.2rem;flex-wrap:wrap}
+.numeros strong{display:block;font-size:2rem;font-family:Georgia,serif;color:#9bd05a}
+
+/* Turmas */
+.turmas{background:#fff}
+.grade3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.card{background:var(--fundo);border:1px solid var(--borda);border-top:5px solid var(--verde);border-radius:var(--raio);padding:1.8rem;transition:transform .25s,box-shadow .25s}
+.card:hover{transform:translateY(-5px);box-shadow:var(--sombra)}
+.card svg{width:44px;height:44px;margin-bottom:1rem;stroke:var(--azul);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.card h3{margin-bottom:.6rem;font-size:1.3rem}
+
+/* Como funciona + diferenciais */
+.passos{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
+.passo{background:#fff;border-left:5px solid var(--azul);padding:1.4rem 1.6rem;border-radius:var(--raio);box-shadow:var(--sombra)}
+.passo h3{font-size:1.15rem;margin-bottom:.4rem}
+.difs{background:var(--creme)}
+.lista-dif{list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+.lista-dif li{display:flex;gap:.8rem;align-items:flex-start;background:#fff;padding:1rem 1.2rem;border-radius:var(--raio)}
+.lista-dif svg{flex:none;width:26px;height:26px;stroke:var(--verde);fill:none;stroke-width:3;margin-top:3px}
+
+/* Chamada final */
+.cta{background:linear-gradient(160deg,var(--azul-esc),var(--azul));text-align:center;color:var(--creme)}
+.cta h2{color:var(--creme);margin-bottom:1rem;font-size:clamp(1.8rem,4.5vw,2.6rem)}
+.cta p{margin-bottom:2rem;max-width:50ch;margin-inline:auto}
+
+/* Footer */
+.footer{background:var(--azul-esc);color:var(--creme);padding:3rem 0 1.5rem;font-size:.95rem}
+.footer .grade3{margin-bottom:2rem}
+.footer h3{color:#fff;font-size:1.1rem;margin-bottom:.6rem}
+.footer a{color:#9bd05a}
+.copy{border-top:1px solid rgba(255,255,255,.2);padding-top:1rem;text-align:center;opacity:.8}
+
+/* Animações de entrada */
+.revela{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.revela.visivel{opacity:1;transform:none}
+
+/* ===== Página de matrícula ===== */
+.topo-mat{background:var(--azul);color:var(--creme);padding:7.5rem 0 3rem;text-align:center}
+.topo-mat h1{color:var(--creme);font-size:clamp(1.8rem,5vw,2.8rem);margin-bottom:.8rem}
+.topo-mat p{max-width:56ch;margin-inline:auto}
+.form-wrap{max-width:720px;margin:-1.5rem auto 4rem;padding:0 4%}
+.progresso{display:flex;align-items:center;gap:1rem;margin-bottom:1rem;font-weight:600;color:var(--azul)}
+.barra{flex:1;height:10px;background:var(--borda);border-radius:99px;overflow:hidden}
+.barra div{height:100%;width:33.3%;background:var(--verde);transition:width .4s}
+.etapa{display:none}
+.etapa.ativa{display:block;animation:entra .4s ease}
+@keyframes entra{from{opacity:0;transform:translateX(16px)}to{opacity:1;transform:none}}
+.bloco{background:#fff;border:1px solid var(--borda);border-radius:var(--raio);padding:1.5rem;margin-bottom:1rem}
+.bloco.cabeca{background:var(--azul);color:var(--creme);font-weight:700;border:0}
+.bloco label.rot,.bloco legend{display:block;font-weight:600;margin-bottom:.6rem}
+.req{color:#c0392b}
+.bloco input[type=text],.bloco input[type=email],.bloco input[type=tel],.bloco input[type=date],.bloco select,.bloco textarea{width:100%;padding:.7rem .8rem;border:1px solid var(--borda);border-radius:8px;font:inherit;background:#fff}
+.bloco input:focus,.bloco select:focus,.bloco textarea:focus{border-color:var(--azul);outline:2px solid var(--azul)}
+.opcao{display:flex;align-items:center;gap:.6rem;padding:.3rem 0;cursor:pointer}
+.opcao input{width:20px;height:20px;accent-color:var(--azul);flex:none}
+.camisas{display:flex;flex-wrap:wrap;gap:.4rem 1.4rem}
+fieldset{border:0}
+.avisos ol{margin:.6rem 0 0 1.3rem}
+.avisos li{margin-bottom:.4rem}
+.erro{display:none;color:#c0392b;font-size:.9rem;margin-top:.4rem}
+.invalido .erro{display:block}
+.invalido input[type=text],.invalido input[type=email],.invalido input[type=tel],.invalido input[type=date],.invalido select{border-color:#c0392b}
+.nav-form{display:flex;gap:1rem;justify-content:space-between;flex-wrap:wrap;margin-top:1.2rem}
+.sucesso{display:none;text-align:center;background:#fff;border-radius:var(--raio);padding:2.5rem 1.5rem;box-shadow:var(--sombra);border-top:6px solid var(--verde)}
+.sucesso.mostra{display:block;animation:entra .5s ease}
+.sucesso h2{margin-bottom:.8rem}
+
+/* Responsivo */
+@media(max-width:860px){
+  .hamburguer{display:block}
+  .menu{position:absolute;top:68px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:var(--azul-esc);padding:1rem 4%;display:none}
+  .menu.aberto{display:flex}
+  .menu li{padding:.6rem 0;border-bottom:1px solid rgba(255,255,255,.1)}
+  .menu .btn{display:block;text-align:center}
+  .duas-col,.grade3,.passos,.lista-dif{grid-template-columns:1fr}
+  section{padding:3.2rem 0}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.revela{opacity:1;transform:none}}
+
+/* Cartão de apresentação e chave "enviar cópia" */
+.intro h2{font-size:1.8rem;margin-bottom:.6rem}
+.switch{position:relative;flex:none;width:46px;height:26px}
+.switch input{position:absolute;inset:0;opacity:0;width:100%;height:100%;cursor:pointer;margin:0}
+.trilho{position:absolute;inset:0;background:#9aa8b4;border-radius:99px;transition:background .2s;pointer-events:none}
+.trilho::after{content:"";position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#fff;transition:transform .2s}
+.switch input:checked+.trilho{background:var(--verde)}
+.switch input:checked+.trilho::after{transform:translateX(20px)}
+.switch input:focus-visible+.trilho{outline:3px solid var(--verde);outline-offset:2px}
+
+.dica{color:var(--suave);font-size:.9rem;margin:-.2rem 0 .6rem}
+
+.lista-op{display:grid;gap:.2rem}
+.opcao{padding:.45rem 0}
+
+/* =====================================================================
+   AJUSTES DE RESPONSIVIDADE PARA CELULAR
+   Só adapta disposição e dimensões; cores, fontes, bordas e sombras do
+   desktop permanecem exatamente como estão.
+   ===================================================================== */
+
+/* --- Base (todas as larguras, sem efeito visual no desktop) --- */
+img,svg{max-width:100%}
+fieldset{min-width:0}              /* evita que grupos de opções estiquem a página (causa de rolagem lateral) */
+.bloco,.card,.passo,.destaque{min-width:0}
+
+/* --- Tablets e celulares grandes (até 768px) --- */
+@media (max-width:768px){
+  .container{width:min(1100px,92%)}
+  .hero{padding:8rem 0 4.5rem}
+  .hero h1{max-width:100%}
+
+  /* Botões em largura total, mantendo o mesmo estilo */
+  .hero .btn,.cta .btn,.sucesso .btn{display:block;width:100%;text-align:center}
+  .sucesso .btn{margin:0 0 .8rem!important}
+  .nav-form{flex-direction:column;align-items:stretch}
+  .nav-form .btn{width:100%;text-align:center}
+
+  /* Formulário confortável para o toque (mín. ~48px de altura) */
+  .bloco input[type=text],.bloco input[type=email],.bloco input[type=tel],.bloco input[type=date],.bloco select{min-height:48px;max-width:100%;min-width:0;display:block}
+  .btn{min-height:48px;display:flex;align-items:center;justify-content:center}
+  .menu .btn{display:flex}
+  .opcao{min-height:44px}
+  .opcao input{width:22px;height:22px}
+  .switch{width:50px}
+
+  /* Textos longos nunca estouram a largura */
+  .bloco,.opcao,.passo,.card,.lista-dif li,.footer p{overflow-wrap:break-word;word-break:normal}
+  /* A animação de entrada das etapas desliza 16px para o lado: aqui ela é contida para não gerar rolagem horizontal */
+  .form-wrap{padding:0 4%;overflow-x:hidden;overflow-x:clip}
+}
+
+/* --- Celulares (até 480px) --- */
+@media (max-width:480px){
+  html{scroll-padding-top:72px}
+  body{font-size:1rem}
+  section{padding:2.8rem 0}
+  .marca{font-size:1.1rem;gap:.5rem}
+  .marca img{width:38px;height:38px}
+  .hero{padding:7rem 0 3.5rem}
+  .hero p{font-size:1.05rem}
+  .destaque,.card,.passo{padding:1.3rem}
+  .numeros{gap:1.4rem}
+  .topo-mat{padding:6.5rem 0 3.5rem}
+  .bloco{padding:1.1rem}
+  .progresso{gap:.7rem;font-size:.95rem}
+  .camisas{gap:.2rem 1rem}            /* tamanhos de camiseta continuam lado a lado, quebrando linha quando faltar espaço */
+  .btn-grande{padding:1rem 1.4rem;font-size:1.05rem}
+  .footer .grade3{gap:1.2rem}
+}
+
+/* --- Celulares bem estreitos (até 360px) --- */
+@media (max-width:360px){
+  .marca{font-size:1rem}
+  .bloco{padding:1rem}
+  .container{width:94%}
+}
