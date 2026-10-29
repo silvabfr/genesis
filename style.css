@@ -210,3 +210,23 @@ fieldset{min-width:0}              /* evita que grupos de opções estiquem a p�
   .bloco{padding:1rem}
   .container{width:94%}
 }
+
+/* ===== Botão "Voltar ao início" (página de matrícula) ===== */
+.btn-voltar{display:inline-flex;align-items:center;gap:.5rem;min-height:44px;padding:.55rem 1.2rem .55rem 1rem;margin-bottom:1.5rem;border:2px solid var(--creme);border-radius:999px;color:var(--creme);text-decoration:none;font-weight:700;font-size:.95rem;transition:transform .2s,background .2s,color .2s,box-shadow .2s}
+.btn-voltar svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;transition:transform .2s}
+.btn-voltar:hover{background:var(--creme);color:var(--azul-esc);transform:translateY(-2px);box-shadow:var(--sombra)}
+.btn-voltar:hover svg{transform:translateX(-3px)}
+.topo-mat .container{text-align:center}
+.topo-mat .btn-voltar{float:none}
+@media (max-width:480px){
+  .btn-voltar{display:flex;justify-content:center;width:100%;min-height:48px}  /* largura total no celular, como os demais botões */
+}
+
+/* ===== Botão "Voltar ao início" fixo no canto superior esquerdo ===== */
+/* Fica sempre visível ao rolar, logo abaixo do header fixo (68px), sem cobrir a logo */
+.btn-voltar{position:fixed;top:calc(68px + .75rem);left:max(.75rem,env(safe-area-inset-left));z-index:40;margin:0;background:var(--azul);box-shadow:0 4px 14px rgba(10,53,86,.35)}
+/* No celular vira um botão redondo só com a seta, para não cobrir o formulário */
+@media (max-width:480px){
+  .btn-voltar{width:46px;height:46px;min-height:46px;padding:0;gap:0;justify-content:center;font-size:0}
+  .btn-voltar svg{width:22px;height:22px}
+}
